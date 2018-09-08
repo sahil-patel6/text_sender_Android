@@ -12,8 +12,8 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:background="@drawable/get_text"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,7 +28,7 @@
             android:background="@android:color/transparent"
             android:fontFamily="sans-serif-condensed"
             android:padding="20dp"
-            android:text="Nothing to Display here because you don't have anything in your clipboard..."
+            android:text="Clipboard Text Will Display Here..."
             android:textColor="#fff"
             android:textSize="25sp"
             android:textStyle="bold"
@@ -57,10 +57,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.02" />
+        app:layout_constraintVertical_bias="0.062" />
 
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -72,9 +72,10 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/send_button"
-        app:layout_constraintVertical_bias="0.079">
+        app:layout_constraintVertical_bias="0.294">
 
         <TextView
             android:id="@+id/get_text"
@@ -83,7 +84,7 @@
             android:background="@android:color/transparent"
             android:fontFamily="sans-serif-condensed"
             android:padding="20dp"
-            android:text="Waiting for you to tap get text button....."
+            android:text="Waiting..."
             android:textColor="#fff"
             android:textSize="25sp"
             android:textStyle="bold"
@@ -96,30 +97,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/get_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/button"
-        android:padding="15dp"
-        android:text="Get Text"
-        android:textColor="#000"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout1" />
-
-    <Button
-        android:background="@drawable/button"
         android:id="@+id/signIn"
-        android:padding="15dp"
-        android:textStyle="bold"
-        android:textColor="#000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -128,10 +106,14 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/button"
+        android:padding="15dp"
         android:text="Sign In/ Sign Up"
+        android:textColor="#000"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/get_button" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout1" />
 
 </android.support.constraint.ConstraintLayout>

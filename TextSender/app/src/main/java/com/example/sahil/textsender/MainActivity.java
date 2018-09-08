@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
     TextView getText;
     String textFromClipboard;
     Button sendButton;
-    Button getButton;
     Button signIn;
     FirebaseAuth mref;
     DatabaseReference mDatabase;
@@ -78,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
         getText = (TextView) findViewById(R.id.get_text);
         getText.setMovementMethod(new ScrollingMovementMethod());
         sendButton = (Button) findViewById(R.id.send_button);
-        getButton = (Button) findViewById(R.id.get_button);
 
         constraintLayout = (ConstraintLayout) findViewById(R.id.main);
 
@@ -101,13 +99,6 @@ public class MainActivity extends AppCompatActivity {
                 if (firebaseAuth.getCurrentUser() == null) {
 
                     sendButton.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            Snackbar.make(constraintLayout,"Please Sign In First",Snackbar.LENGTH_LONG).show();
-                        }
-                    });
-
-                    getButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
                             Snackbar.make(constraintLayout,"Please Sign In First",Snackbar.LENGTH_LONG).show();
@@ -142,26 +133,6 @@ public class MainActivity extends AppCompatActivity {
                                         Snackbar.make(constraintLayout,"An error occured while sending",Snackbar.LENGTH_LONG).show();
                                         Log.e("Error While Sending",databaseError.toString());
                                     }
-                                }
-                            });
-                        }
-                    });
-
-                    getButton.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    if (dataSnapshot.child("users").child(mref.getUid()).getValue()!=null) {
-                                        String value = dataSnapshot.child("users").child(mref.getUid()).getValue().toString();
-                                        getText.setText(value);
-                                    }
-                                }
-
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) {
-                                    Snackbar.make(constraintLayout,"An error occured while getting",Snackbar.LENGTH_LONG).show();
                                 }
                             });
                         }
